@@ -2,12 +2,15 @@ class Detour < Formula
   desc "Terminal-first HTTP debugging proxy with a real-time web dashboard"
   homepage "https://github.com/rwadada/Detour"
   # Detour's source repo is private (issue #52), so its GitHub Release
-  # assets need an authenticated download strategy — set
+  # asset download needs an Authorization header — set
   # HOMEBREW_GITHUB_API_TOKEN (a GitHub token with `repo` scope) before
-  # `brew install`/`brew tap`, e.g. in your shell profile:
+  # `brew install`, e.g. in your shell profile:
   #   export HOMEBREW_GITHUB_API_TOKEN="$(gh auth token)"
+  # CurlDownloadStrategy (the default; no `using:` needed) automatically
+  # drops this header after the redirect to
+  # objects.githubusercontent.com, so it's safe to always send it here.
   url "https://github.com/rwadada/Detour/releases/download/v0.1.10/detour-0.1.10.tar.gz",
-      using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      header: "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
   sha256 "a60d185f78d6caeac54276c7f23652875ad3097fcdd88802d9506833907b1f17"
   license "MIT"
 
