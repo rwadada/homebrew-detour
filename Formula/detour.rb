@@ -1,16 +1,20 @@
 class Detour < Formula
   desc "Terminal-first HTTP debugging proxy with a real-time web dashboard"
   homepage "https://github.com/rwadada/Detour"
-  # Detour's source repo is private (issue #52), so its GitHub Release
-  # asset download needs an Authorization header — set
-  # HOMEBREW_GITHUB_API_TOKEN (a GitHub token with `repo` scope) before
-  # `brew install`, e.g. in your shell profile:
+  # Detour's source repo is private (issue #52). The friendly
+  # github.com/OWNER/REPO/releases/download/... URL 404s for private-repo
+  # assets no matter what Authorization header is sent (verified directly
+  # with curl) — the actual authenticated download path is the REST API's
+  # asset endpoint, which needs Accept: application/octet-stream to return
+  # the binary instead of asset metadata JSON. Set HOMEBREW_GITHUB_API_TOKEN
+  # (a GitHub token with `repo` scope) before `brew install`, e.g.:
   #   export HOMEBREW_GITHUB_API_TOKEN="$(gh auth token)"
-  # CurlDownloadStrategy (the default; no `using:` needed) automatically
-  # drops this header after the redirect to
-  # objects.githubusercontent.com, so it's safe to always send it here.
-  url "https://github.com/rwadada/Detour/releases/download/v0.1.10/detour-0.1.10.tar.gz",
-      header: "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
+  version "0.1.10"
+  url "https://api.github.com/repos/rwadada/Detour/releases/assets/543903314",
+      headers: [
+        "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
+        "Accept: application/octet-stream",
+      ]
   sha256 "a60d185f78d6caeac54276c7f23652875ad3097fcdd88802d9506833907b1f17"
   license "MIT"
 
