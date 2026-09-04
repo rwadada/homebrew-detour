@@ -9,13 +9,13 @@ class Detour < Formula
   # the binary instead of asset metadata JSON. Set HOMEBREW_GITHUB_API_TOKEN
   # (a GitHub token with `repo` scope) before `brew install`, e.g.:
   #   export HOMEBREW_GITHUB_API_TOKEN="$(gh auth token)"
-  url "https://api.github.com/repos/rwadada/Detour/releases/assets/543903314",
+  url "https://api.github.com/repos/rwadada/Detour/releases/assets/543967477",
       headers: [
         "Authorization: Bearer #{ENV["HOMEBREW_GITHUB_API_TOKEN"]}",
         "Accept: application/octet-stream",
       ]
-  version "0.1.10"
-  sha256 "a60d185f78d6caeac54276c7f23652875ad3097fcdd88802d9506833907b1f17"
+  version "0.1.12"
+  sha256 "c092c55afffaf64c1f8162f6b4aa831c8c0cf640f1c63303aa2e533a55278f4b"
   license "MIT"
 
   depends_on "node"
