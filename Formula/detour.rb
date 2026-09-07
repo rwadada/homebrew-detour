@@ -16,7 +16,7 @@ class Detour < Formula
       ]
   version "0.1.13"
   sha256 "02f0466ac88d3a7a77ffb114787f830bcc3e2fd2aef288faf929357e2817727d"
-  license "MIT"
+  license "Apache-2.0"
 
   depends_on "node"
 
