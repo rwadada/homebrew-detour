@@ -4,14 +4,6 @@ Homebrew tap for [Detour](https://github.com/rwadada/Detour) — a terminal-firs
 
 ## Install
 
-Detour's source repo is private, so its GitHub Release assets need an authenticated download. Set `HOMEBREW_GITHUB_API_TOKEN` to a GitHub token with `repo` scope before tapping/installing — e.g. in your shell profile:
-
-```bash
-export HOMEBREW_GITHUB_API_TOKEN="$(gh auth token)"
-```
-
-Then:
-
 ```bash
 brew install rwadada/detour/detour
 detour start --port 8080
