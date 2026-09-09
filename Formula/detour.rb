@@ -1,13 +1,8 @@
 class Detour < Formula
   desc "Terminal-first HTTP debugging proxy with a real-time web dashboard"
   homepage "https://github.com/rwadada/Detour"
-  # Once the source repo is public, this friendly releases/download URL
-  # serves the asset directly, no auth needed. Before that it 404s no
-  # matter what Authorization header is sent — while the repo is private,
-  # this formula only works from a checkout with the repo's own
-  # authenticated download path substituted back in (see git history).
-  url "https://github.com/rwadada/Detour/releases/download/v0.1.13/detour-0.1.13.tar.gz"
-  sha256 "02f0466ac88d3a7a77ffb114787f830bcc3e2fd2aef288faf929357e2817727d"
+  url "https://github.com/rwadada/Detour/releases/download/v0.2.0/detour-0.2.0.tar.gz"
+  sha256 "4500785c5d2cd98800f4d4fcc47196fd7ff9a191d7590a3ede773b3dcbd7cbaa"
   license "Apache-2.0"
 
   depends_on "node"
