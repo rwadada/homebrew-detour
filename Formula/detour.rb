@@ -1,8 +1,8 @@
 class Detour < Formula
   desc "Terminal-first HTTP debugging proxy with a real-time web dashboard"
   homepage "https://github.com/rwadada/Detour"
-  url "https://github.com/rwadada/Detour/releases/download/v1.3.0/detour-1.3.0.tar.gz"
-  sha256 "033d43aadcbbdbba213f1e6c4c34ba0b0e064302bf94cfbe410227c8dca0b5b0"
+  url "https://github.com/rwadada/Detour/releases/download/v1.4.0/detour-1.4.0.tar.gz"
+  sha256 "2bc66bc5073270f6ab1d898582f2c33e4b8386313f65f401f5002f7694a72640"
   license "Apache-2.0"
 
   depends_on "node"
